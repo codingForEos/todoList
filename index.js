@@ -7,6 +7,6 @@ let findName = (username)=>{
         resolve(username);
       }
       else{
-        reject('not find this name')
+        reject('not this name')
       }
     }));
