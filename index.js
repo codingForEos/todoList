@@ -1,12 +1,20 @@
 // 小狗狗
 import React from 'react';
 import {render} from 'react-dom';
-import Provider from 'react-redux';
-import {creatStore} from 'redux';
+import { Provider} from 'react-redux';
+import {createStore } from 'redux';
+
+
+// 引入最终用于处理所有action的reducers
+import todoApp from "./reducers/index";
+import App from "./components/App";
+
+//创建store 
+const store = createStore(todoApp);
 
 render(
-    <div>
-        <h1>小狗狗</h1>
-    </div>,
+    <Provider store={store}>
+            <App />
+    </Provider>,
     document.getElementById('todoapp')
-)
+);
